@@ -131,7 +131,7 @@ interface IBookManager {
 
 需要注意的是:
 
-> 还要import我们用到的实体类*import com.kanlulu.aidl_test.bean.Book;* 因为Book不是aidl支持的基本数据类型（aidl语法支持的类型：java的基本数据类型、List和Map、其他AIDL接口和实现Parcelable的实体类）。
+> 还要import我们用到的实体类*import com.kanlulu.aidl_test.bean.Book;* 因为Book不是aidl支持的数据类型（aidl语法支持的数据类型：java的基本数据类型、List和Map、其他AIDL接口和实现Parcelable的实体类）。
 
 > `void addBook(in Book book);`中的"in" 表示输入，还有其他的：out表示输出，inout表示输入输出。
 
