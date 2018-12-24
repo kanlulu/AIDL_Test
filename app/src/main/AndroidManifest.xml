@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kanlulu.aidl_test">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity android:name=".client.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.MyAIDLService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":aidl_test" />
+        <service android:name=".service.MessengerService"
+            android:process=":messenger"
+            />
+
+        <activity
+            android:name=".client.OtherProcessActivity"
+            android:process=":bundle" />
+
+        <provider
+            android:authorities="com.kanlulu.aidl_test.provider.IPCProvider"
+            android:name=".provider.IPCProvider"
+            android:process=":test_ipc_provider"
+            android:grantUriPermissions="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

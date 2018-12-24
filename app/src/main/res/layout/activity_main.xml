@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".client.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_books"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+    <com.kanlulu.aidl_test.widget.CircleProgress
+        android:id="@+id/progress"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_below="@id/tv_books"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="btnAdd"
+        android:text="open activity of OtherProcess"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_ipc_contentProvider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_add"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="btnContentProvider"
+        android:text="open activity of contentProvider"
+        android:textAllCaps="false" />
+
+
+</RelativeLayout>
