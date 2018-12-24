@@ -110,7 +110,7 @@ public class Book implements Parcelable {
 
 2.创建aidl文件夹和aidl文件
 
-在和src/main目录下创建aidl文件夹，需要保持和java在统计目录。在Android Studio中我们自然不需要一步一步手动创建aidl文件夹和aidl文件。如图所示：
+在和src/main目录下创建aidl文件夹，需要保持和java文件夹在同一目录下。在Android Studio中我们自然不需要一步一步手动创建aidl文件夹和aidl文件。如图所示：
 ![创建AIDL](https://img-blog.csdnimg.cn/20181206133443532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MDQ2MzA1,size_16,color_FFFFFF,t_70)
 
 这一步完成即完成了aidl接口文件的创建，我们可以根据自己的需要写一些接口方法：
@@ -131,7 +131,7 @@ interface IBookManager {
 
 需要注意的是:
 
-> 还要import我们用到的实体类*import com.kanlulu.aidl_test.bean.Book;* 因为Book不是aidl支持的基本数据类型（java的基本数据类型、List和Map、其他AIDL接口和实现Parcelable的实体类*后3种不是基本数据类型*）。
+> 还要import我们用到的实体类*import com.kanlulu.aidl_test.bean.Book;* 因为Book不是aidl支持的基本数据类型（aidl语法支持的类型：java的基本数据类型、List和Map、其他AIDL接口和实现Parcelable的实体类）。
 
 > `void addBook(in Book book);`中的"in" 表示输入，还有其他的：out表示输出，inout表示输入输出。
 
