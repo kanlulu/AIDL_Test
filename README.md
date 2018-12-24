@@ -1,4 +1,4 @@
-﻿### Android进程间通信机制之AIDL
+﻿### [Android进程间通信机制之AIDL](https://blog.csdn.net/qq_36046305/article/details/84769536)
 
  AIDL的全称为:*Android Interface Definition Language*，即安卓接口定义语言。我们可以使用它定义客户端和服务端通信时都认可的编程接口。
 
@@ -301,3 +301,5 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 至此，在Android中利用AIDL进行进程间通信就完成了。
+
+[博客地址](https://blog.csdn.net/qq_36046305/article/details/84769536)
