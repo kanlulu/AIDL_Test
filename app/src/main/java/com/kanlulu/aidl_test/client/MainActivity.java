@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         /** ============================ */
 //        mProgressView.setProgress(80);
 
+        //TODO AIDL
 //        Book bookName = new Book(10, "bookName");
 //
 //        try {
