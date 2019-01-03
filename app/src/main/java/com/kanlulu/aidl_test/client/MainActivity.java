@@ -42,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
             mAidl = null;
         }
     };
+
+    IBinder.DeathRecipient deathRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            if (mAidl == null) return;
+            mAidl.asBinder().unlinkToDeath(deathRecipient, 0);
+            mAidl = null;
+            //TODO 重新绑定服务
+//            bindService()
+        }
+    };
     public TextView tvBooks;
     public CircleProgress mProgressView;
 
@@ -101,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     private void addBook() {
         Uri uri = IPCProvider.IPC_CONTENT_URI;
         ContentValues contentValues = new ContentValues();
-        contentValues.put("_id", (int)((Math.random()*9+1)*100));
+        contentValues.put("_id", (int) ((Math.random() * 9 + 1) * 100));
         contentValues.put("name", "ipc_provider_book_name");
         contentValues.put("description", "ipc_provider_book_description");
         ContentResolver contentResolver = getContentResolver();
@@ -114,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = contentResolver.query(uri, new String[]{"name", "description"}, null, null, null);
         if (cursor == null) return;
         while (cursor.moveToNext()) {
-            String result = cursor.getString(0) +"  *****  " +cursor.getString(1);
+            String result = cursor.getString(0) + "  *****  " + cursor.getString(1);
             Log.e("debug", result);
         }
 
