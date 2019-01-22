@@ -12,6 +12,15 @@ android {
     }
     buildTypes {
         release {
+            buildConfigField("boolean", "IS_DEBUG", IS_DEBUG)
+            buildConfigField("String", "CHANNEL", CHANNEL)
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+            buildConfigField("boolean", "IS_DEBUG", "true")
+            buildConfigField("String", "CHANNEL", CHANNEL)
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

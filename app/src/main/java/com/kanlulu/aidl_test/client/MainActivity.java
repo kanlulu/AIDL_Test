@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.kanlulu.aidl_test.BuildConfig;
 import com.kanlulu.aidl_test.IBookManager;
 import com.kanlulu.aidl_test.R;
 import com.kanlulu.aidl_test.provider.IPCProvider;
@@ -73,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnAdd(View view) {
         queryBook();
+        if (!BuildConfig.IS_DEBUG) {
+            Toast.makeText(this, "CHANNEL: "+BuildConfig.CHANNEL, Toast.LENGTH_LONG).show();
+        }
 
         /** ================================== */
 //        Intent intent = new Intent(this, OtherProcessActivity.class);
