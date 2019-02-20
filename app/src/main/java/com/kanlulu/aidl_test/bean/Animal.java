@@ -6,6 +6,8 @@ import android.os.Parcelable;
 /**
  * Created by kanlulu
  * DATE: 2018/11/30 15:54
+ *
+ * 如果我们只需要将对象在内存中传递，那么首选Parcelable来对对象进行序列化与反序列化操作
  */
 public class Animal implements Parcelable {
     private String name;
@@ -26,6 +28,7 @@ public class Animal implements Parcelable {
 
     /**
      * 自动生成的
+     * 不要改动顺序，序列化与反序列化受顺序的影响
      */
     protected Animal(Parcel in) {
         name = in.readString();
@@ -90,6 +93,7 @@ public class Animal implements Parcelable {
 
     /**
      * 序列化
+     * 不能改动顺序
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
